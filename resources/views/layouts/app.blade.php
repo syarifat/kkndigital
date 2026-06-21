@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('icon.svg') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         body { font-family: 'Nunito', sans-serif; }
@@ -34,7 +35,6 @@
                 <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-stone-500">
                     <a href="{{ url('/') }}#paket" class="hover:text-stone-900 transition-colors">Paket Harga</a>
                     <a href="{{ url('/') }}#template" class="hover:text-stone-900 transition-colors">Contoh Template</a>
-                    <a href="{{ url('/admin/orders') }}" class="hover:text-stone-900 transition-colors">Pesanan</a>
                 </nav>
 
                 <!-- CTA -->
@@ -83,7 +83,8 @@
                     <ul class="space-y-2.5 text-sm">
                         <li><a href="{{ url('/') }}" class="hover:text-stone-200 transition-colors">Beranda</a></li>
                         <li><a href="{{ url('/order') }}" class="hover:text-stone-200 transition-colors">Form Pemesanan</a></li>
-                        <li><a href="{{ url('/admin/orders') }}" class="hover:text-stone-200 transition-colors">Daftar Pesanan</a></li>
+                        <li><a href="{{ url('/') }}#addon" class="hover:text-stone-200 transition-colors">Domain & Hosting</a></li>
+                        <li><a href="{{ url('/') }}#bundling" class="hover:text-stone-200 transition-colors">Paket Bundling</a></li>
                     </ul>
                 </div>
             </div>
