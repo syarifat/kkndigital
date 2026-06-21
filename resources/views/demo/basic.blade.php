@@ -121,7 +121,7 @@
                 <div class="space-y-3">
                     <div class="flex items-center gap-3 text-sm text-stone-600"><span class="text-lg">📱</span><span>Instagram: <strong>@kknugm_sukamaju</strong></span></div>
                     <div class="flex items-center gap-3 text-sm text-stone-600"><span class="text-lg">✉️</span><span>Email: <strong>kknunit12@ugm.ac.id</strong></span></div>
-                    <a href="https://wa.me/6287842949212" target="_blank" class="inline-flex items-center gap-2 mt-2 px-5 py-2.5 bg-green-700 hover:bg-green-800 text-white font-bold rounded-xl text-sm transition-all">WhatsApp KKN</a>
+                    <a href="https://wa.me/6287859017087" target="_blank" class="inline-flex items-center gap-2 mt-2 px-5 py-2.5 bg-green-700 hover:bg-green-800 text-white font-bold rounded-xl text-sm transition-all">WhatsApp KKN</a>
                 </div>
             </div>
             <div class="bg-stone-100 border border-stone-200 rounded-2xl h-52 flex items-center justify-center">

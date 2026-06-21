@@ -226,7 +226,7 @@
                     </div>
                     <div>
                         <label for="pic_whatsapp" class="block text-xs font-bold text-stone-600 mb-2">Nomor WhatsApp PIC</label>
-                        <input type="tel" name="pic_whatsapp" id="pic_whatsapp" value="{{ old('pic_whatsapp') }}" placeholder="cth: 087842949212" required class="w-full border border-stone-300 rounded-lg px-4 py-3 text-sm text-stone-800 bg-white focus:outline-none focus:border-green-500 placeholder:text-stone-300 transition-colors">
+                        <input type="tel" name="pic_whatsapp" id="pic_whatsapp" value="{{ old('pic_whatsapp') }}" placeholder="cth: 087859017087" required class="w-full border border-stone-300 rounded-lg px-4 py-3 text-sm text-stone-800 bg-white focus:outline-none focus:border-green-500 placeholder:text-stone-300 transition-colors">
                     </div>
                     <div class="sm:col-span-2">
                         <label for="pic_email" class="block text-xs font-bold text-stone-600 mb-2">Alamat Email Aktif</label>

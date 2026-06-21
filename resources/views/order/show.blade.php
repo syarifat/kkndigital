@@ -55,9 +55,9 @@
                     <div>
                         <p class="text-[10px] font-black uppercase tracking-widest text-stone-400 mb-3">PIHAK II — Developer / Penyedia Jasa</p>
                         <dl class="space-y-1.5 text-sm">
-                            <div class="flex gap-2"><dt class="text-stone-400 w-28 shrink-0">Nama</dt><dd class="font-bold text-stone-800">Syarif & Team</dd></div>
+                            <div class="flex gap-2"><dt class="text-stone-400 w-28 shrink-0">Nama</dt><dd class="font-bold text-stone-800 flex items-center gap-1.5"><img src="{{ asset('favicon.png') }}" class="w-4 h-4 rounded object-cover"> SAT Project</dd></div>
                             <div class="flex gap-2"><dt class="text-stone-400 w-28 shrink-0">Layanan</dt><dd class="text-stone-700">KKN Digital</dd></div>
-                            <div class="flex gap-2"><dt class="text-stone-400 w-28 shrink-0">WhatsApp</dt><dd class="text-stone-700">0878-4294-9212</dd></div>
+                            <div class="flex gap-2"><dt class="text-stone-400 w-28 shrink-0">WhatsApp</dt><dd class="text-stone-700">0878-5901-7087</dd></div>
                         </dl>
                     </div>
                 </div>

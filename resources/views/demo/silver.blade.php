@@ -29,7 +29,7 @@
                 <a href="#proker" class="hover:text-green-700 transition-colors">Program Kerja</a>
                 <a href="#galeri" class="hover:text-green-700 transition-colors">Galeri</a>
                 <a href="#struktur" class="hover:text-green-700 transition-colors">Kelompok</a>
-                <a href="https://wa.me/6287842949212" target="_blank" class="px-3 py-1.5 bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors">Hubungi</a>
+                <a href="https://wa.me/6287859017087" target="_blank" class="px-3 py-1.5 bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors">Hubungi</a>
             </div>
         </div>
     </nav>
@@ -49,7 +49,7 @@
                 <a href="#proker" class="px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-amber-900 font-bold rounded-lg text-sm transition-all">
                     Lihat Program Kerja
                 </a>
-                <a href="https://wa.me/6287842949212" target="_blank" class="px-5 py-2.5 border border-green-500 text-green-100 hover:bg-green-700 font-semibold rounded-lg text-sm transition-all">
+                <a href="https://wa.me/6287859017087" target="_blank" class="px-5 py-2.5 border border-green-500 text-green-100 hover:bg-green-700 font-semibold rounded-lg text-sm transition-all">
                     Hubungi Kami
                 </a>
             </div>
@@ -187,7 +187,7 @@
                 <p class="text-green-200 text-sm leading-relaxed mb-6">
                     Kantor Kepala Desa Surya Mukti, Dusun Kaliurip RT 02/01, Kec. Ngaglik, Kab. Sleman, D.I. Yogyakarta.
                 </p>
-                <a href="https://wa.me/6287842949212" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 bg-amber-400 hover:bg-amber-300 text-amber-900 font-black rounded-xl text-sm transition-all">
+                <a href="https://wa.me/6287859017087" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 bg-amber-400 hover:bg-amber-300 text-amber-900 font-black rounded-xl text-sm transition-all">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24z"/></svg>
                     WhatsApp KKN
                 </a>

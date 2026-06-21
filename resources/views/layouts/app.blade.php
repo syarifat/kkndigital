@@ -26,9 +26,7 @@
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
                 <a href="{{ url('/') }}" class="flex items-center gap-2.5 group">
-                    <div class="w-8 h-8 rounded-full bg-green-700 flex items-center justify-center text-amber-100 font-black text-sm group-hover:bg-green-800 transition-colors">
-                        K
-                    </div>
+                    <img src="{{ asset('favicon.png') }}" alt="KKN Digital" class="w-8 h-8 rounded-xl object-cover">
                     <span class="text-base font-black text-stone-800 tracking-tight">KKN<span class="text-green-700">Digital</span></span>
                 </a>
 
@@ -58,13 +56,13 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-2 mb-4">
-                        <div class="w-7 h-7 rounded-full bg-green-600 flex items-center justify-center text-white font-black text-sm">K</div>
+                        <img src="{{ asset('favicon.png') }}" alt="KKN Digital" class="w-7 h-7 rounded-lg object-cover">
                         <span class="text-base font-black text-white">KKN<span class="text-green-400">Digital</span></span>
                     </div>
                     <p class="text-sm text-stone-400 max-w-xs leading-relaxed mb-5">
                         Bantu kelompok KKN kamu tampil profesional di dunia digital. Murah, cepat, dan tepat sasaran.
                     </p>
-                    <a href="https://wa.me/6287842949212" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-green-400 hover:text-green-300 transition-colors">
+                    <a href="https://wa.me/6287859017087" target="_blank" class="inline-flex items-center gap-2 text-xs font-semibold text-green-400 hover:text-green-300 transition-colors">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.835-4.577c1.611.956 3.197 1.467 4.905 1.468 5.582 0 10.133-4.55 10.136-10.13.002-2.701-1.047-5.242-2.952-7.149C17.076 1.704 14.546.654 11.834.654 6.252.654 1.7 5.205 1.697 10.787a10.098 10.098 0 001.405 5.048l-.404 1.48 4.194-1.1c1.558.85 3.253 1.3 4.995 1.301z"/></svg>
                         WhatsApp Kami
                     </a>
@@ -73,9 +71,10 @@
                 <div>
                     <h4 class="text-xs font-bold text-stone-300 uppercase tracking-widest mb-4">Pilihan Paket</h4>
                     <ul class="space-y-2.5 text-sm">
-                        <li><a href="{{ url('/') }}#paket" class="hover:text-stone-200 transition-colors">🌿 Paket Silver</a></li>
-                        <li><a href="{{ url('/') }}#paket" class="hover:text-stone-200 transition-colors">🌾 Paket Gold</a></li>
-                        <li><a href="{{ url('/') }}#paket" class="hover:text-stone-200 transition-colors">🏆 Paket Platinum</a></li>
+                        <li><a href="{{ url('/') }}#paket" class="hover:text-stone-200 transition-colors">Paket Basic</a></li>
+                        <li><a href="{{ url('/') }}#paket" class="hover:text-stone-200 transition-colors">Paket Standard</a></li>
+                        <li><a href="{{ url('/') }}#paket" class="hover:text-stone-200 transition-colors">Paket Pro</a></li>
+                        <li><a href="{{ url('/') }}#paket" class="hover:text-stone-200 transition-colors">Paket Premium</a></li>
                     </ul>
                 </div>
 
@@ -91,7 +90,11 @@
 
             <div class="border-t border-stone-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-stone-600">
                 <p>&copy; {{ date('Y') }} KKN Digital. Dibuat dengan ❤️ untuk para pejuang pengabdian.</p>
-                <span>Developer: <strong class="text-stone-400">Syarif & Team</strong></span>
+                <a href="#" class="flex items-center gap-1.5 hover:text-stone-400 transition-colors">
+                    <span class="text-stone-500">Powered by</span>
+                    <img src="{{ asset('favicon.png') }}" alt="SAT Project" class="w-4 h-4 rounded object-cover opacity-80">
+                    <strong class="text-stone-400">SAT Project</strong>
+                </a>
             </div>
         </div>
     </footer>
