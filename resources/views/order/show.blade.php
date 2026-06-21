@@ -25,7 +25,8 @@
 
         <!-- SPK Box -->
         <div class="bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm">
-            <!-- SPK Header -->
+
+            <!-- Header -->
             <div class="bg-stone-900 text-white px-8 py-6 flex justify-between items-start">
                 <div>
                     <p class="text-xs font-bold text-stone-400 uppercase tracking-widest mb-1">Surat Perintah Kerja (SPK)</p>
@@ -38,7 +39,8 @@
             </div>
 
             <div class="p-8">
-                <!-- Pihak-Pihak -->
+
+                <!-- Pihak I & II -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8 pb-8 border-b border-stone-100">
                     <div>
                         <p class="text-[10px] font-black uppercase tracking-widest text-stone-400 mb-3">PIHAK I — Kelompok KKN / Pemesan</p>
@@ -60,7 +62,7 @@
                     </div>
                 </div>
 
-                <!-- Lokasi KKN -->
+                <!-- Lokasi -->
                 <div class="mb-8 pb-8 border-b border-stone-100">
                     <p class="text-[10px] font-black uppercase tracking-widest text-stone-400 mb-3">Lokasi Pengabdian</p>
                     <p class="text-sm text-stone-700 bg-stone-50 rounded-lg px-4 py-3 border border-stone-200">
@@ -70,9 +72,9 @@
                     </p>
                 </div>
 
-                <!-- Rincian Paket -->
+                <!-- Rincian Biaya -->
                 <div class="mb-8">
-                    <p class="text-[10px] font-black uppercase tracking-widest text-stone-400 mb-3">Rincian Paket</p>
+                    <p class="text-[10px] font-black uppercase tracking-widest text-stone-400 mb-3">Rincian Biaya</p>
                     <table class="w-full text-sm border border-stone-200 rounded-xl overflow-hidden">
                         <thead class="bg-stone-50 text-[10px] font-black uppercase tracking-widest text-stone-400 border-b border-stone-200">
                             <tr>
@@ -81,34 +83,72 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-stone-100">
+                            <!-- Jasa Development -->
                             <tr>
                                 <td class="px-5 py-4">
-                                    <span class="font-black text-stone-800">Paket {{ strtoupper($order->package_name) }}</span>
-                                    <span class="block text-xs text-stone-400 mt-0.5">Termasuk Domain & Hosting 1 Tahun</span>
+                                    <span class="font-black text-stone-800">Jasa Development — Paket {{ strtoupper($order->package_name) }}</span>
                                 </td>
-                                <td class="px-5 py-4 text-right font-black text-stone-800">Rp {{ number_format($order->total_price, 0, ',', '.') }}</td>
+                                <td class="px-5 py-4 text-right font-bold text-stone-800">
+                                    Rp {{ number_format($order->total_price - $order->addon_price, 0, ',', '.') }}
+                                </td>
                             </tr>
+                            <!-- Domain -->
                             <tr>
                                 <td class="px-5 py-4">
-                                    <span class="font-semibold text-stone-700">Fitur Konten</span>
+                                    <span class="font-semibold text-stone-700">Domain</span>
                                     <span class="block text-xs text-stone-400 mt-0.5">
-                                        @if(!empty($order->additional_features))
-                                            {{ implode(', ', $order->additional_features) }}
-                                        @else
-                                            —
-                                        @endif
+                                        {{ $domainLabels[$order->domain_package] ?? $order->domain_package }}
                                     </span>
                                 </td>
-                                <td class="px-5 py-4 text-right text-stone-400 text-xs font-semibold">Termasuk</td>
+                                <td class="px-5 py-4 text-right font-bold text-stone-800">
+                                    @php
+                                        $domainAmounts = ['none' => null, 'subdomain' => 0, 'standar' => 60000, 'kreatif' => 85000, 'instansi' => 220000, 'premium_com' => 230000];
+                                        $dAmt = $domainAmounts[$order->domain_package] ?? null;
+                                    @endphp
+                                    @if(is_null($dAmt))
+                                        <span class="text-stone-400 text-xs">–</span>
+                                    @elseif($dAmt === 0)
+                                        <span class="text-green-600 font-black">Gratis</span>
+                                    @else
+                                        Rp {{ number_format($dAmt, 0, ',', '.') }}
+                                    @endif
+                                </td>
+                            </tr>
+                            <!-- Hosting -->
+                            <tr>
+                                <td class="px-5 py-4">
+                                    <span class="font-semibold text-stone-700">Hosting Server</span>
+                                    <span class="block text-xs text-stone-400 mt-0.5">
+                                        {{ $hostingLabels[$order->hosting_package] ?? $order->hosting_package }}
+                                    </span>
+                                </td>
+                                <td class="px-5 py-4 text-right font-bold text-stone-800">
+                                    @php
+                                        $hostAmt = ['none' => null, '3bulan' => 60000, '6bulan' => 120000][$order->hosting_package] ?? null;
+                                    @endphp
+                                    @if(is_null($hostAmt))
+                                        <span class="text-stone-400 text-xs">–</span>
+                                    @else
+                                        Rp {{ number_format($hostAmt, 0, ',', '.') }}
+                                    @endif
+                                </td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr class="bg-stone-900 text-white">
                                 <td class="px-5 py-4 font-black">Total Biaya</td>
-                                <td class="px-5 py-4 text-right font-black text-xl">Rp {{ number_format($order->total_price, 0, ',', '.') }}</td>
+                                <td class="px-5 py-4 text-right font-black text-xl">
+                                    Rp {{ number_format($order->total_price, 0, ',', '.') }}
+                                </td>
                             </tr>
                         </tfoot>
                     </table>
+
+                    @if($order->domain_package == 'none' || $order->hosting_package == 'none')
+                    <p class="text-xs text-amber-600 mt-3 font-semibold bg-amber-50 border border-amber-200 rounded-lg px-4 py-2.5">
+                        ⚠️ Kamu memilih koordinasi domain/hosting via WhatsApp. Harga di atas belum termasuk biaya domain/hosting yang akan dikonfirmasi bersama developer.
+                    </p>
+                    @endif
                 </div>
 
                 <!-- Action Buttons -->
@@ -123,7 +163,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 @endsection

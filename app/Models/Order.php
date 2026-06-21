@@ -9,6 +9,9 @@ class Order extends Model
     protected $fillable = [
         'order_number',
         'package_name',
+        'domain_package',
+        'hosting_package',
+        'addon_price',
         'pic_name',
         'pic_university',
         'pic_group_name',
@@ -17,12 +20,7 @@ class Order extends Model
         'kkn_location_village',
         'kkn_location_district',
         'kkn_location_regency',
-        'additional_features',
         'total_price',
         'status',
-    ];
-
-    protected $casts = [
-        'additional_features' => 'array',
     ];
 }

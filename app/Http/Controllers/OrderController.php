@@ -32,45 +32,67 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'package_name' => 'required|in:basic,standard,pro,premium',
-            'pic_name' => 'required|string|max:255',
-            'pic_university' => 'required|string|max:255',
-            'pic_group_name' => 'required|string|max:255',
-            'pic_whatsapp' => 'required|string|max:20',
-            'pic_email' => 'required|email|max:255',
-            'kkn_location_village' => 'required|string|max:255',
+            'package_name'          => 'required|in:basic,standard,pro,premium',
+            'domain_package'        => 'required|in:none,subdomain,standar,kreatif,instansi,premium_com',
+            'hosting_package'       => 'required|in:none,3bulan,6bulan',
+            'pic_name'              => 'required|string|max:255',
+            'pic_university'        => 'required|string|max:255',
+            'pic_group_name'        => 'required|string|max:255',
+            'pic_whatsapp'          => 'required|string|max:20',
+            'pic_email'             => 'required|email|max:255',
+            'kkn_location_village'  => 'required|string|max:255',
             'kkn_location_district' => 'required|string|max:255',
-            'kkn_location_regency' => 'required|string|max:255',
-            'additional_features' => 'nullable|array',
+            'kkn_location_regency'  => 'required|string|max:255',
         ]);
 
-        // Calculate total price based on package
-        $prices = [
+        // Harga jasa development
+        $devPrices = [
             'basic'    => 200000,
             'standard' => 400000,
             'pro'      => 750000,
             'premium'  => 1000000,
         ];
-        $totalPrice = $prices[$validated['package_name']];
+
+        // Harga domain add-on
+        $domainPrices = [
+            'none'        => 0,
+            'subdomain'   => 0,
+            'standar'     => 60000,
+            'kreatif'     => 85000,
+            'instansi'    => 220000,
+            'premium_com' => 230000,
+        ];
+
+        // Harga hosting add-on
+        $hostingPrices = [
+            'none'   => 0,
+            '3bulan' => 60000,
+            '6bulan' => 120000,
+        ];
+
+        $addonPrice = $domainPrices[$validated['domain_package']] + $hostingPrices[$validated['hosting_package']];
+        $totalPrice = $devPrices[$validated['package_name']] + $addonPrice;
 
         // Generate unique order number
         $orderNumber = 'KKN-' . date('Ymd') . '-' . mt_rand(1000, 9999);
 
         // Store to database
         $order = Order::create([
-            'order_number' => $orderNumber,
-            'package_name' => $validated['package_name'],
-            'pic_name' => $validated['pic_name'],
-            'pic_university' => $validated['pic_university'],
-            'pic_group_name' => $validated['pic_group_name'],
-            'pic_whatsapp' => $validated['pic_whatsapp'],
-            'pic_email' => $validated['pic_email'],
-            'kkn_location_village' => $validated['kkn_location_village'],
+            'order_number'          => $orderNumber,
+            'package_name'          => $validated['package_name'],
+            'domain_package'        => $validated['domain_package'],
+            'hosting_package'       => $validated['hosting_package'],
+            'addon_price'           => $addonPrice,
+            'pic_name'              => $validated['pic_name'],
+            'pic_university'        => $validated['pic_university'],
+            'pic_group_name'        => $validated['pic_group_name'],
+            'pic_whatsapp'          => $validated['pic_whatsapp'],
+            'pic_email'             => $validated['pic_email'],
+            'kkn_location_village'  => $validated['kkn_location_village'],
             'kkn_location_district' => $validated['kkn_location_district'],
-            'kkn_location_regency' => $validated['kkn_location_regency'],
-            'additional_features' => $validated['additional_features'] ?? [],
-            'total_price' => $totalPrice,
-            'status' => 'pending',
+            'kkn_location_regency'  => $validated['kkn_location_regency'],
+            'total_price'           => $totalPrice,
+            'status'                => 'pending',
         ]);
 
         return redirect()->route('order.show', $order->order_number)
@@ -84,16 +106,31 @@ class OrderController extends Controller
     {
         $order = Order::where('order_number', $order_number)->firstOrFail();
 
-        // Format WhatsApp Text for Developer redirect
-        $developerNumber = '6287842949212'; // Ganti dengan nomor WhatsApp Developer Anda
-        $featuresText = !empty($order->additional_features) ? implode(', ', $order->additional_features) : '-';
-        
-        $message = "*HALO DEVELOPER KKN DIGITAL!* 🚀\n\n";
-        $message .= "Saya ingin melakukan pemesanan website KKN dengan detail berikut:\n\n";
-        $message .= "*[ DATA PESANAN ]*\n";
+        $developerNumber = '6287842949212';
+
+        // Label-label untuk tampilan
+        $domainLabels = [
+            'none'        => 'Tidak ada domain',
+            'subdomain'   => 'Subdomain Gratis (.satcloud.tech) — 6 bulan',
+            'standar'     => 'Domain Ekstensi Standar (.online/.site/.space) — 1 tahun',
+            'kreatif'     => 'Domain Ekstensi Kreatif (.blog/.click/.cloud) — 1 tahun',
+            'instansi'    => 'Domain Ekstensi Instansi (.org) — 1 tahun',
+            'premium_com' => 'Domain Premium (.com) — 1 tahun',
+        ];
+        $hostingLabels = [
+            'none'   => 'Tidak ada hosting',
+            '3bulan' => 'Hosting 3 Bulan (20GB)',
+            '6bulan' => 'Hosting 6 Bulan (20GB)',
+        ];
+
+        $message = "*HALO DEVELOPER KKN DIGITAL!* 🌾\n\n";
+        $message .= "Saya ingin memesan website KKN. Berikut detailnya:\n\n";
+        $message .= "*[ PAKET YANG DIPESAN ]*\n";
         $message .= "• No Pesanan: {$order->order_number}\n";
-        $message .= "• Paket: " . ucfirst($order->package_name) . " (Rp " . number_format($order->total_price, 0, ',', '.') . ")\n";
-        $message .= "• Fitur Konten: {$featuresText}\n\n";
+        $message .= "• Paket Development: " . strtoupper($order->package_name) . " (Rp " . number_format($order->total_price - $order->addon_price, 0, ',', '.') . ")\n";
+        $message .= "• Domain: " . ($domainLabels[$order->domain_package] ?? $order->domain_package) . "\n";
+        $message .= "• Hosting: " . ($hostingLabels[$order->hosting_package] ?? $order->hosting_package) . "\n";
+        $message .= "• Total Harga: Rp " . number_format($order->total_price, 0, ',', '.') . "\n\n";
         $message .= "*[ DATA PIC KKN ]*\n";
         $message .= "• Nama PIC: {$order->pic_name}\n";
         $message .= "• Universitas: {$order->pic_university}\n";
@@ -104,11 +141,14 @@ class OrderController extends Controller
         $message .= "• Desa: {$order->kkn_location_village}\n";
         $message .= "• Kecamatan: {$order->kkn_location_district}\n";
         $message .= "• Kabupaten: {$order->kkn_location_regency}\n\n";
-        $message .= "Mohon segera diproses untuk koordinasi lebih lanjut. Terima kasih!";
+        $message .= "Mohon segera dihubungi untuk koordinasi lanjutan. Terima kasih!";
 
         $whatsappUrl = "https://api.whatsapp.com/send?phone=" . $developerNumber . "&text=" . urlencode($message);
 
-        return view('order.show', compact('order', 'whatsappUrl'));
+        $domainLabels = $domainLabels;
+        $hostingLabels = $hostingLabels;
+
+        return view('order.show', compact('order', 'whatsappUrl', 'domainLabels', 'hostingLabels'));
     }
 
     /**

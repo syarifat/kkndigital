@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('order_number')->unique();
             $table->string('package_name');
+            $table->string('domain_package')->nullable();  // none, subdomain, standar, kreatif, instansi, premium_com
+            $table->string('hosting_package')->nullable(); // none, 3bulan, 6bulan
+            $table->integer('addon_price')->default(0);    // total harga domain + hosting
             $table->string('pic_name');
             $table->string('pic_university');
             $table->string('pic_group_name');
@@ -23,7 +26,6 @@ return new class extends Migration
             $table->string('kkn_location_village');
             $table->string('kkn_location_district');
             $table->string('kkn_location_regency');
-            $table->json('additional_features')->nullable();
             $table->integer('total_price');
             $table->string('status')->default('pending');
             $table->timestamps();
