@@ -32,20 +32,28 @@
 
             <!-- Right: Visual cards -->
             <div class="hidden md:flex flex-col gap-4 relative">
+                <!-- Ornamen top kiri: statistik website terbangun -->
                 <div class="bg-white rounded-2xl border border-stone-200 p-5 shadow-md ml-8 rotate-1 hover:-rotate-0 transition-transform duration-500">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-700 font-black text-sm">D</div>
-                        <div>
-                            <p class="font-bold text-stone-800 text-sm">Desa Ngadiharjo</p>
-                            <p class="text-xs text-stone-400">KKN UGM 2026 • Sudah Live ✅</p>
+                    <p class="text-[10px] font-black uppercase tracking-widest text-stone-400 mb-3">Fitur Website KKN</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-xs text-stone-600">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0"></span> Profil Desa & Peta Lokasi
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-stone-600">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0"></span> Daftar Program Kerja
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-stone-600">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-500 shrink-0"></span> Galeri Dokumentasi
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-stone-400">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span> + Blog, Logbook, UMKM & lebih
                         </div>
                     </div>
-                    <div class="h-1.5 bg-stone-100 rounded-full"><div class="h-full bg-green-500 rounded-full" style="width:90%"></div></div>
                 </div>
                 <div class="bg-green-700 text-white rounded-2xl p-5 shadow-lg -rotate-1 hover:rotate-0 transition-transform duration-500">
-                    <p class="text-xs font-bold uppercase tracking-widest text-green-300 mb-2">Paket PRO Terlaris</p>
-                    <p class="text-3xl font-black">Rp 750.000</p>
-                    <p class="text-green-300 text-xs mt-1">Multi-page + Blog Kegiatan + Status Proker</p>
+                    <p class="text-xs font-bold uppercase tracking-widest text-green-300 mb-2">Paket STANDARD Terlaris</p>
+                    <p class="text-3xl font-black">Rp 400.000</p>
+                    <p class="text-green-300 text-xs mt-1">Multi-page + CMS Admin + Galeri & Proker</p>
                 </div>
                 <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5 shadow-sm -ml-4 rotate-0.5 hover:rotate-0 transition-transform duration-500">
                     <p class="text-xs font-bold text-stone-500 mb-2">⏱ Rata-rata pengerjaan</p>
@@ -109,48 +117,47 @@
             </div>
 
             <!-- Paket STANDARD -->
-            <div class="bg-[#faf7f2] border border-stone-200 rounded-2xl p-6 flex flex-col justify-between hover:border-stone-300 transition-all">
+            <div class="bg-green-700 text-white border-2 border-green-700 rounded-2xl p-6 flex flex-col justify-between shadow-xl shadow-green-700/20">
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="inline-block text-[10px] font-black uppercase tracking-widest bg-blue-100 text-blue-600 px-2.5 py-1 rounded-md">STANDARD</span>
-                        <span class="text-[9px] font-black bg-blue-500 text-white px-2 py-0.5 rounded-full uppercase tracking-wide">Rekomendasi Dasar</span>
+                        <span class="inline-block text-[10px] font-black uppercase tracking-widest bg-green-600 text-green-100 px-2.5 py-1 rounded-md">STANDARD</span>
+                        <span class="text-[9px] font-black bg-amber-400 text-amber-900 px-2 py-0.5 rounded-full uppercase tracking-wide">Terlaris ⭐</span>
                     </div>
-                    <p class="text-stone-600 text-xs mb-4 leading-relaxed">Tampilan lebih rapi dengan panel admin untuk update foto & proker.</p>
-                    <p class="text-3xl font-black text-stone-900 mb-0.5">Rp 400k</p>
-                    <p class="text-[11px] text-stone-400 mb-5">Jasa development saja</p>
-                    <ul class="space-y-2 text-xs text-stone-600 mb-6">
-                        <li class="flex gap-2 items-start"><span class="text-green-600 font-bold shrink-0">✓</span> <strong>Semua fitur Basic</strong></li>
-                        <li class="flex gap-2 items-start"><span class="text-green-600 font-bold shrink-0">✓</span> Multi-Page (beberapa halaman)</li>
-                        <li class="flex gap-2 items-start"><span class="text-green-600 font-bold shrink-0">✓</span> Dashboard Admin + Login</li>
-                        <li class="flex gap-2 items-start"><span class="text-green-600 font-bold shrink-0">✓</span> CMS Galeri Dokumentasi</li>
-                        <li class="flex gap-2 items-start"><span class="text-green-600 font-bold shrink-0">✓</span> CMS Detail Proker & Progres</li>
-                        <li class="flex gap-2 items-start"><span class="text-stone-300 font-bold shrink-0">✗</span> <span class="text-stone-400">Blog/Portal Berita</span></li>
+                    <p class="text-green-200 text-xs mb-4 leading-relaxed">Tampilan lebih rapi dengan panel admin untuk update foto & proker.</p>
+                    <p class="text-3xl font-black text-white mb-0.5">Rp 400k</p>
+                    <p class="text-[11px] text-green-300 mb-5">Jasa development saja</p>
+                    <ul class="space-y-2 text-xs text-green-100 mb-6">
+                        <li class="flex gap-2 items-start"><span class="text-amber-300 font-bold shrink-0">✓</span> <strong>Semua fitur Basic</strong></li>
+                        <li class="flex gap-2 items-start"><span class="text-amber-300 font-bold shrink-0">✓</span> Multi-Page (beberapa halaman)</li>
+                        <li class="flex gap-2 items-start"><span class="text-amber-300 font-bold shrink-0">✓</span> Dashboard Admin + Login</li>
+                        <li class="flex gap-2 items-start"><span class="text-amber-300 font-bold shrink-0">✓</span> CMS Galeri Dokumentasi</li>
+                        <li class="flex gap-2 items-start"><span class="text-amber-300 font-bold shrink-0">✓</span> CMS Detail Proker & Progres</li>
+                        <li class="flex gap-2 items-start"><span class="text-green-400/50 font-bold shrink-0">✗</span> <span class="text-green-300/60">Blog/Portal Berita</span></li>
                     </ul>
                 </div>
-                <a href="{{ url('/order?package=standard') }}" class="block text-center py-2.5 border-2 border-stone-700 text-stone-700 font-bold rounded-xl hover:bg-stone-700 hover:text-white transition-all text-xs">
+                <a href="{{ url('/order?package=standard') }}" class="block text-center py-2.5 bg-amber-400 hover:bg-amber-300 text-amber-900 font-black rounded-xl transition-all text-xs shadow">
                     Pilih Paket Standard
                 </a>
             </div>
 
             <!-- Paket PRO -->
-            <div class="bg-green-700 text-white border-2 border-green-700 rounded-2xl p-6 flex flex-col justify-between shadow-xl shadow-green-700/20">
+            <div class="bg-[#faf7f2] border border-stone-200 rounded-2xl p-6 flex flex-col justify-between hover:border-stone-300 transition-all">
                 <div>
                     <div class="flex items-center justify-between mb-4">
-                        <span class="inline-block text-[10px] font-black uppercase tracking-widest bg-green-600 text-green-100 px-2.5 py-1 rounded-md">PRO</span>
-                        <span class="text-[9px] font-black bg-amber-400 text-amber-900 px-2 py-0.5 rounded-full uppercase tracking-wide">Terlaris ⭐</span>
+                        <span class="inline-block text-[10px] font-black uppercase tracking-widest bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-md">PRO</span>
                     </div>
-                    <p class="text-green-200 text-xs mb-4 leading-relaxed">Publikasi kegiatan harian agar laporan KKN terlihat aktif & profesional.</p>
-                    <p class="text-3xl font-black text-white mb-0.5">Rp 750k</p>
-                    <p class="text-[11px] text-green-300 mb-5">Jasa development saja</p>
-                    <ul class="space-y-2 text-xs text-green-100 mb-6">
-                        <li class="flex gap-2 items-start"><span class="text-amber-300 font-bold shrink-0">✓</span> <strong>Semua fitur Standard</strong></li>
-                        <li class="flex gap-2 items-start"><span class="text-amber-300 font-bold shrink-0">✓</span> Multi-Page + Sistem Blog/Berita</li>
-                        <li class="flex gap-2 items-start"><span class="text-amber-300 font-bold shrink-0">✓</span> CMS Portal Berita & Artikel</li>
-                        <li class="flex gap-2 items-start"><span class="text-amber-300 font-bold shrink-0">✓</span> Manajemen Status Proker</li>
-                        <li class="flex gap-2 items-start"><span class="text-amber-300 font-bold shrink-0">✓</span> Kategori Berita per Divisi</li>
+                    <p class="text-stone-600 text-xs mb-4 leading-relaxed">Publikasi kegiatan harian agar laporan KKN terlihat aktif & profesional.</p>
+                    <p class="text-3xl font-black text-stone-900 mb-0.5">Rp 750k</p>
+                    <p class="text-[11px] text-stone-400 mb-5">Jasa development saja</p>
+                    <ul class="space-y-2 text-xs text-stone-600 mb-6">
+                        <li class="flex gap-2 items-start"><span class="text-green-600 font-bold shrink-0">✓</span> <strong>Semua fitur Standard</strong></li>
+                        <li class="flex gap-2 items-start"><span class="text-green-600 font-bold shrink-0">✓</span> Multi-Page + Sistem Blog/Berita</li>
+                        <li class="flex gap-2 items-start"><span class="text-green-600 font-bold shrink-0">✓</span> CMS Portal Berita & Artikel</li>
+                        <li class="flex gap-2 items-start"><span class="text-green-600 font-bold shrink-0">✓</span> Manajemen Status Proker</li>
+                        <li class="flex gap-2 items-start"><span class="text-green-600 font-bold shrink-0">✓</span> Kategori Berita per Divisi</li>
                     </ul>
                 </div>
-                <a href="{{ url('/order?package=pro') }}" class="block text-center py-2.5 bg-amber-400 hover:bg-amber-300 text-amber-900 font-black rounded-xl transition-all text-xs shadow">
+                <a href="{{ url('/order?package=pro') }}" class="block text-center py-2.5 border-2 border-stone-700 text-stone-700 font-bold rounded-xl hover:bg-stone-700 hover:text-white transition-all text-xs">
                     Pilih Paket Pro
                 </a>
             </div>
