@@ -26,7 +26,7 @@
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
                 <a href="{{ url('/') }}" class="flex items-center gap-2.5 group">
-                    <img src="{{ asset('favicon.png') }}" alt="KKN Digital" class="w-8 h-8 rounded-xl object-cover">
+                    <img src="{{ asset('icon.svg') }}" alt="KKN Digital" class="w-8 h-8">
                     <span class="text-base font-black text-stone-800 tracking-tight">KKN<span class="text-green-700">Digital</span></span>
                 </a>
 
@@ -56,7 +56,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-2 mb-4">
-                        <img src="{{ asset('favicon.png') }}" alt="KKN Digital" class="w-7 h-7 rounded-lg object-cover">
+                        <img src="{{ asset('icon.svg') }}" alt="KKN Digital" class="w-7 h-7">
                         <span class="text-base font-black text-white">KKN<span class="text-green-400">Digital</span></span>
                     </div>
                     <p class="text-sm text-stone-400 max-w-xs leading-relaxed mb-5">
